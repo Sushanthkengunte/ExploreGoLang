@@ -2,8 +2,8 @@ package Controller
 
 import (
 	"fmt"
-	"leetcode/InputUtility"
-	"leetcode/SearchingAlgorithms"
+	"ExploreGolang/InputUtility"
+	"ExploreGolang/SearchingAlgorithms"
 )
 
 //HandleSearch : Selecting the search algorithm

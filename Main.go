@@ -1,9 +1,9 @@
 package main
 
 import (
+	"ExploreGolang/Controller"
+	"ExploreGolang/InputUtility"
 	"fmt"
-	"leetcode/Controller"
-	"leetcode/InputUtility"
 	"strconv"
 )
 

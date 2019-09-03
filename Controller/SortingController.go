@@ -2,8 +2,8 @@ package Controller
 
 import (
 	"fmt"
-	"leetcode/InputUtility"
-	SortingAlgo "leetcode/SortingAlgorithms"
+	"ExploreGolang/InputUtility"
+	SortingAlgo "ExploreGolang/SortingAlgorithms"
 )
 
 //HandleSort : Selecting the search algorithm
