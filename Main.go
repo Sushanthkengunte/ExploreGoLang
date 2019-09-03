@@ -12,7 +12,7 @@ func getArrayLikeElementFromUser() []int {
 
 	//check if there is 0 is entered
 	for numberOfElements <= 0 {
-		numberOfElements = InputUtility.GetIntegerInputFromUser("Enter number of elements other than 0 ")
+		numberOfElements = InputUtility.GetIntegerInputFromUser("Enter a positive number of elements other than 0 ")
 	}
 	sliceOfElement := make([]int, numberOfElements)
 	for index := 0; index < numberOfElements; index++ {

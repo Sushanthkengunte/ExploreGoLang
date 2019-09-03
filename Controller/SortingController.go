@@ -16,6 +16,7 @@ func HandleSort(sliceToBeSorted []int) {
 		result := SortingAlgo.BubleSort(sliceToBeSorted)
 		SortingAlgo.PrintTheValue(result)
 		break
+
 	default:
 		break
 
