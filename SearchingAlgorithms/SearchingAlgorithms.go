@@ -23,7 +23,7 @@ func LinearSearch(input []int, toFind int) int {
 
 //BinarySearch searches for an integer in a sorted array.
 //Input: which takes in a slice and an integer as input.
-//Output: index of the item or -1. Time complexity: O(nlogn) Space complexity: O(n)
+//Output: index of the item or -1. Time complexity: O(logn) Space complexity: O(n)
 func BinarySearch(input []int, toFind int) int {
 
 	return binaryHelper(0, len(input), toFind, input)
@@ -48,7 +48,7 @@ func binaryHelper(low int, high int, toFind int, input []int) int {
 
 //JumpSearch searches for an integer in a sorted array.
 //Input: which takes in a slice and an integer as input.
-//Output: index of the item or -1. Time complexity:  Space complexity:
+//Output: index of the item or -1. Time complexity: root of n  Space complexity: 1
 func JumpSearch(input []int, toFind int) int {
 
 	lengthOfTheElement := float64(len(input))
@@ -77,6 +77,21 @@ func JumpSearch(input []int, toFind int) int {
 	return -1
 }
 
+//ExponentialSearch searches for an integer in a sorted array.
+//Input: which takes in a slice and an integer as input.
+//Output: index of the item or -1. Time complexity:   Space complexity:
+func ExponentialSearch(input []int, toFind int) int {
+	if input[0] == toFind {
+		return 0
+	}
+	rangeToSearch := 1
+	for rangeToSearch < len(input) && rangeToSearch <= toFind {
+		rangeToSearch = rangeToSearch * 2
+	}
+
+	return binaryHelper(int(rangeToSearch/2), int(math.Min(float64(rangeToSearch), float64(len(input)))), toFind, input)
+}
+
 //PrintTheValue : Prints the value in the slice at an index
 //Input: arrays
 //Output: index
@@ -87,13 +102,3 @@ func PrintTheValue(arrayToRef []int, index int) {
 	}
 	fmt.Printf("The value %d is at index %d\n", arrayToRef[index], index)
 }
-
-// func main() {
-// 	fmt.Println("Calling linear function and sending an array with one item in array")
-// 	// inputString := make([]int)
-// 	inputString := []int{6, 5, 4, 3, 2, 1}
-// 	// result := linearSearch(inputString, 3)
-// 	// printTheValue(inputString, result)
-// 	// result = linearSearch(make([]int, 0), 3)
-// 	// printTheValue(make([]int, 0), result)
-// }

@@ -32,10 +32,3 @@ func PrintTheValue(sliceToSort []int) {
 	fmt.Println(" \n Final Sorted array is ----> ", sliceToSort, "TADA!!! ")
 	fmt.Println("\n======================================================")
 }
-
-// func main() {
-// 	fmt.Println("Sorting algorithms")
-// 	inputString := []int{6, 5, 4, 3, 2, 1}
-// 	bubleSort(inputString)
-
-// }
