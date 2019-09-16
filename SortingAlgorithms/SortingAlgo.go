@@ -25,6 +25,28 @@ func BubleSort(sortThisArrayInput []int) []int {
 	return sortThisArray
 }
 
+//SelectionSort : sorts the slice
+func SelectionSort(inputSlice []int) []int {
+	if len(inputSlice) <= 1 {
+		return inputSlice
+	}
+	var indexOfTheMinElement int
+	sortThisArray := inputSlice[:]
+	for iterationNumber := 0; iterationNumber < len(sortThisArray)-1; iterationNumber++ {
+		indexOfTheMinElement = iterationNumber
+		for minElementIndexSearch := iterationNumber + 1; minElementIndexSearch < len(sortThisArray); minElementIndexSearch++ {
+			if sortThisArray[minElementIndexSearch] < sortThisArray[indexOfTheMinElement] {
+				indexOfTheMinElement = minElementIndexSearch
+			}
+		}
+		swapTheMinElement := sortThisArray[indexOfTheMinElement]
+		sortThisArray[indexOfTheMinElement] = sortThisArray[iterationNumber]
+		sortThisArray[iterationNumber] = swapTheMinElement
+	}
+
+	return sortThisArray
+}
+
 //PrintTheValue : Prints the sorted slice
 //Input: Slice
 func PrintTheValue(sliceToSort []int) {

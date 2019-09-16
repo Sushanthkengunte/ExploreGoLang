@@ -85,7 +85,7 @@ func ExponentialSearch(input []int, toFind int) int {
 		return 0
 	}
 	rangeToSearch := 1
-	for rangeToSearch < len(input) && rangeToSearch <= toFind {
+	for rangeToSearch < len(input) && input[rangeToSearch] <= toFind {
 		rangeToSearch = rangeToSearch * 2
 	}
 
