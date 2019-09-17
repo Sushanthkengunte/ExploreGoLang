@@ -9,7 +9,7 @@ import (
 //HandleSort : Selecting the search algorithm
 //Input: the slice which has to be sorted
 func HandleSort(sliceToBeSorted []int) {
-	name := InputUtility.GetStringInputFromUser("Enter the sorting algorithm to search: buble, selection")
+	name := InputUtility.GetStringInputFromUser("Enter the sorting algorithm to search: buble, selection, insertion")
 	switch name {
 	case "buble":
 		fmt.Println("Buble Sort Implementation")
@@ -19,6 +19,11 @@ func HandleSort(sliceToBeSorted []int) {
 	case "selection":
 		fmt.Println("Selection sort Implementation")
 		result := SortingAlgo.SelectionSort(sliceToBeSorted)
+		SortingAlgo.PrintTheValue(result)
+		break
+	case "insertion":
+		fmt.Println("Insertion sort Implementation")
+		result := SortingAlgo.InsertionSort(sliceToBeSorted)
 		SortingAlgo.PrintTheValue(result)
 		break
 

@@ -26,6 +26,7 @@ func BubleSort(sortThisArrayInput []int) []int {
 }
 
 //SelectionSort : sorts the slice
+// Selects a minimum element and swap it with the correct place
 func SelectionSort(inputSlice []int) []int {
 	if len(inputSlice) <= 1 {
 		return inputSlice
@@ -44,6 +45,30 @@ func SelectionSort(inputSlice []int) []int {
 		sortThisArray[iterationNumber] = swapTheMinElement
 	}
 
+	return sortThisArray
+}
+
+//InsertionSort : sorts the slice
+//Pick an element an put it in the correct place
+func InsertionSort(inputSlice []int) []int {
+	if len(inputSlice) <= 1 {
+		return inputSlice
+	}
+
+	sortThisArray := inputSlice[:]
+
+	for iterationNumber := 1; iterationNumber < len(sortThisArray); iterationNumber++ {
+
+		elementToSwap := sortThisArray[iterationNumber]
+		selectTheCorrectIndexForTheElement := iterationNumber - 1
+
+		for selectTheCorrectIndexForTheElement >= 0 && elementToSwap < sortThisArray[selectTheCorrectIndexForTheElement] {
+			sortThisArray[selectTheCorrectIndexForTheElement+1] = sortThisArray[selectTheCorrectIndexForTheElement]
+			selectTheCorrectIndexForTheElement--
+		}
+
+		sortThisArray[selectTheCorrectIndexForTheElement+1] = elementToSwap
+	}
 	return sortThisArray
 }
 

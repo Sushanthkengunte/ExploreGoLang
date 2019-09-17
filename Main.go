@@ -35,7 +35,7 @@ func main() {
 	// result := SearchingAlgorithms.LinearSearch(inputString, 1)
 	// SearchingAlgorithms.PrintTheValue(inputString, result)
 
-	choiceOfTheUser := InputUtility.GetStringInputFromUser("Enter what kind of program to run. \"searching\" or \"sorting\" ")
+	choiceOfTheUser := InputUtility.GetStringInputFromUser("Enter what kind of program you want to run. \"searching\" or \"sorting\" ")
 
 	switch choiceOfTheUser {
 	case "searching":
